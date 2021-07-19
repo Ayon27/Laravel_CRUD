@@ -19,6 +19,7 @@ Route::get('/create', [testController::class, 'create'])->name('create');
 Route::post('/create', [testController::class, 'store'])->name('store');
 Route::get('/edit/{id}', [testController::class, 'edit'])->name('edit');
 Route::post('/update/{id}', [testController::class, 'update'])->name('update');
+Route::post('/delete/{id}', [testController::class, 'delete'])->name('delete');
 
 //Route::view('/', 'welcome');
 
