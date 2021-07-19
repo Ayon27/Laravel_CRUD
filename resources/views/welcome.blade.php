@@ -26,7 +26,21 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->password }}</td>
                             <td>
-                                <button class="btn btn-danger">Delete</button>
+                                <form method="POST" id="delete-form-{{ $user->id }}"
+                                    action="{{ route('delete', $user->id) }}" style="display: none">
+                                    {{ csrf_field() }}
+                                    {{-- {{ method_field('delete') }} --}}
+                                </form>
+                                <a href="">
+                                    <button class="btn btn-danger" onclick="if (confirm('Are you sure?')) {
+                                                                                    event.preventDefault();
+                                                                                    document.getElementById('delete-form-{{ $user->id }}').submit(); }
+                                                                                    else {
+                                                                                        event.preventDefault();
+                                                                                    }"> Delete
+                                    </button>
+                                </a>
+
                                 <a href="{{ route('edit', $user->id) }}">
                                     <button class="btn btn-primary ms-1">Edit</button></a>
                             </td>

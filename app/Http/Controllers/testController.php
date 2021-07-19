@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use http\Env\Request;
 use App\Models\User;
 use Illuminate\Http\Request;
+use NunoMaduro\Collision\Adapters\Phpunit\Style;
 
 class testController extends Controller
 {
@@ -56,5 +57,10 @@ class testController extends Controller
         $user->password = $request->password;
         $user->save();
         return redirect(route('home'))->with('SuccessMsg', 'User successfully added');
+    }
+    public function delete($id)
+    {
+        User::find($id)->delete();
+        return redirect(route('home'))->with('SuccessMsg', 'User Deleted SUccessfully' style="color: red");
     }
 }
