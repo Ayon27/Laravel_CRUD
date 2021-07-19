@@ -9,7 +9,7 @@
             @endforeach
         @endif
         <div class="d-flex justify-content-center m-4">
-            <h1>Create Page</h1>
+            <h1> Edit User </h1>
         </div>
         <div class="d-flex justify-content-center mb-4">
             <form action="{{ route('update', $user->id) }}" method="post">
@@ -54,7 +54,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">Edit</button>
 
                 <!-- Register buttons -->
                 <div class="text-center">
