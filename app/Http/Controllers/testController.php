@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 //use http\Env\Request;
 use App\Models\User;
 use Illuminate\Http\Request;
-use NunoMaduro\Collision\Adapters\Phpunit\Style;
 
 class testController extends Controller
 {
     public function testMethod()
     {
-        $users = User::all();
+        $users = User::paginate(4);
         return view('welcome', compact('users'));
     }
 
@@ -61,6 +60,6 @@ class testController extends Controller
     public function delete($id)
     {
         User::find($id)->delete();
-        return redirect(route('home'))->with('SuccessMsg', 'User Deleted SUccessfully' style="color: red");
+        return redirect(route('home'))->with('successMsg', 'User Deleted SUccessfully');
     }
 }

@@ -33,11 +33,11 @@
                                 </form>
                                 <a href="">
                                     <button class="btn btn-danger" onclick="if (confirm('Are you sure?')) {
-                                                                                    event.preventDefault();
-                                                                                    document.getElementById('delete-form-{{ $user->id }}').submit(); }
-                                                                                    else {
-                                                                                        event.preventDefault();
-                                                                                    }"> Delete
+                                                                    event.preventDefault();
+                                                                    document.getElementById('delete-form-{{ $user->id }}').submit(); }
+                                                                    else {
+                                                                     event.preventDefault();
+                                                                     }"> Delete
                                     </button>
                                 </a>
 
@@ -49,5 +49,9 @@
                 </tbody>
             </table>
         </div>
+
+    </div>
+    <div class="container">
+        {{ $users->links() }}
     </div>
 @endsection
